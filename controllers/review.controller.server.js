@@ -25,6 +25,10 @@ module.exports = (app) => {
     reviewService.createReview(req.params['uid'], req.params['rid'], req.body)
       .then(review => res.json(review))
   });
+  app.post('/api/reviews', (req, res) => {
+    reviewService.createReviewSimpleURL(req.body)
+    .then(review => res.json(review))
+  });
   app.delete('/api/reviews/:rid', (req, res) => {
     reviewService.deleteReview(req.params['rid'])
       .then(review => res.send("Successfully deleted."))

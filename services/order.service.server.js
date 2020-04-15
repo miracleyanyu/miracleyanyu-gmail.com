@@ -21,6 +21,9 @@ const updateOrder = (oid, order) =>
 const deleteOrder = (oid) =>
     orderDao.deleteOrder(oid);
 
+const createOrderSimpleURL = (order) =>
+    orderDao.createOrderSimpleURL(order);
+
 module.exports = {
   findAllOrders,
   findOrderById,
@@ -28,5 +31,6 @@ module.exports = {
   findOrderByRestaurant,
   createOrder,
   updateOrder,
-  deleteOrder
+  deleteOrder,
+  createOrderSimpleURL
 }

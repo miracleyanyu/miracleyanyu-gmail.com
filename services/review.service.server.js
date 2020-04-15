@@ -21,6 +21,9 @@ const updateReview = (rid, review) =>
 const deleteReview = (rid) =>
     reviewDao.deleteReview(rid);
 
+const createReviewSimpleURL = (review) =>
+    reviewDao.createReviewSimpleURL(review);
+
 module.exports = {
   findAllReviews,
   findReviewById,
@@ -28,5 +31,6 @@ module.exports = {
   updateReview,
   deleteReview,
   findReviewByUser,
-  findReviewByRestaurant
+  findReviewByRestaurant,
+  createReviewSimpleURL
 }

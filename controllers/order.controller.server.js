@@ -25,6 +25,10 @@ module.exports = (app) => {
     orderService.createOrder(req.params['uid'], req.params['rid'], req.body)
       .then(order => res.json(order))
   });
+  app.post('/api/orders', (req, res) => {
+    orderService.createOrderSimpleURL(req.body)
+    .then(order => res.json(order))
+  });
   app.delete('/api/orders/:oid', (req, res) => {
     orderService.deleteOrder(req.params['oid'])
       .then(order => res.send("Successfully deleted."))

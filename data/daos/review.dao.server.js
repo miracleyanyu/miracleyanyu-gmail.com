@@ -24,6 +24,9 @@ const updateReview = (rid, review) =>
 const deleteReview = (rid) =>
     reviewModel.findByIdAndDelete({_id: rid});
 
+const createReviewSimpleURL = (review) =>
+    reviewModel.create(review);
+
 module.exports = {
   findAllReviews,
   findReviewById,
@@ -31,5 +34,6 @@ module.exports = {
   updateReview,
   deleteReview,
   findReviewByUser,
-  findReviewByRestaurant
+  findReviewByRestaurant,
+  createReviewSimpleURL
 }

@@ -50,8 +50,4 @@ module.exports = (app) => {
     userService.deleteUser(req.params['uid'])
       .then(user => res.send("Successfully deleted."))
   })
-  app.post('/api/users/:uid/orders', (req, res) => {
-    userService.placeOrder(req.params['uid'], req.body)
-      .then(user => res.send(user))
-  })
 }

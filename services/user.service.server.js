@@ -18,19 +18,11 @@ const updateUser = (uid, user) =>
 const deleteUser = (uid) =>
     userDao.deleteUser(uid);
 
-const placeOrder = (uid, order) =>
-    userDao.placeOrder(uid, order);
-
-const writeReview = (uid, review) =>
-    userDao.writeReview(uid, review);
-
 module.exports = {
   findAllUsers,
   findUserById,
   createUser,
   updateUser,
   deleteUser,
-  placeOrder,
-  writeReview,
   logIn
 }

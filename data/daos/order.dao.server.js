@@ -24,6 +24,9 @@ const updateOrder = (oid, order) =>
 const deleteOrder = (oid) =>
     orderModel.findByIdAndDelete({_id: oid});
 
+const createOrderSimpleURL = (order) =>
+    orderModel.create(order);
+
 module.exports = {
   findAllOrders,
   findOrderById,
@@ -31,5 +34,6 @@ module.exports = {
   findOrderByRestaurant,
   createOrder,
   updateOrder,
-  deleteOrder
+  deleteOrder,
+  createOrderSimpleURL
 }
