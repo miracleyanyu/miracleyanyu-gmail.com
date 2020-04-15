@@ -34,4 +34,8 @@ require('./controllers/user.controller.server')(app);
 require('./controllers/review.controller.server')(app);
 require('./controllers/order.controller.server')(app);
 
+app.get('/', (req, res) => {
+  res.send('Team18 NodeJs Server.')
+});
+
 app.listen(process.env.PORT | 3000);
