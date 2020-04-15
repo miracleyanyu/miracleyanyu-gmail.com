@@ -38,4 +38,4 @@ app.get('/', (req, res) => {
   res.send('Team18 NodeJs Server.')
 });
 
-app.listen(process.env.PORT | 3000);
+app.listen(process.env.PORT || 3000);
