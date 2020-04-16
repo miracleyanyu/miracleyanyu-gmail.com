@@ -1,8 +1,29 @@
 const menuModel = require('../models/Menu/menu.model.server');
 
+const itemDao = require('../daos/item.dao.server');
+
 const findMenuForRestaurant = (rid) =>
     menuModel.find({restaurantId: rid});
 
+const createMenu = (menu) =>
+    menuModel.create(menu);
+
+const deleteMenu = (mid) =>
+    menuModel.findByIdAndDelete({_id: mid});
+
+const addItem = (mid, item) =>
+    itemDao.createItem(item)
+      .then(item => menuModel.findByIdAndUpdate({_id: mid}, {$push: {items: item._id}}));
+
+const deleteItem = (mid, iid) => {
+  itemDao.deleteItem(iid)
+  return menuModel.findByIdAndDelete({_id: mid}, {$pull: {items: {_id: iid}}});
+}
+
 module.exports = {
-  findMenuForRestaurant
+  findMenuForRestaurant,
+  createMenu,
+  deleteMenu,
+  addItem,
+  deleteItem
 }

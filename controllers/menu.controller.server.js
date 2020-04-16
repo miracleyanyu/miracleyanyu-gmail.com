@@ -5,4 +5,20 @@ module.exports = (app) => {
     menuService.findMenuForRestaurant(req.params['rid'])
       .then(menu => res.send(menu))
   })
+  app.post('/api/menus', (req, res) => {
+    menuService.createMenu(req.body)
+      .then(menu => res.json(menu))
+  });
+  app.delete('/api/menus/:mid', (req, res) => {
+    menuService.deleteMenu(req.params['mid'])
+      .then(menu => res.send("Successfully deleted."))
+  });
+  app.put('/api/menus/:mid', (req, res) => {
+    menuService.addItem(req.params['mid'], req.body)
+      .then(menu => res.send(menu))
+  });
+  app.delete('/api/menus/:mid/items/:iid', (req, res) => {
+    menuService.deleteItem(req.params['mid'], req.params['iid'])
+      .then(menu => res.send(menu))
+  })
 }

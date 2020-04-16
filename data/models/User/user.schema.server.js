@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema({
     adminLevel: {type: String, enum: ["NONE", "GENERAL", "SENIOR"], default: "NONE"}
     },
   customer: {
-      customerLevel: {type: String, enum: ["BRONZE", "SILVER", "GOLD", "DIAMOND"], default: "BRONZE"},
+      customerLevel: {type: String, enum: ["RESTAURANT", "BRONZE", "SILVER", "GOLD", "DIAMOND"], default: "BRONZE"},
       // reviews: [{
       //   type: mongoose.Schema.Types.ObjectId,
       //   ref: 'ReviewModel'

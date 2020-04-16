@@ -237,9 +237,60 @@
       <h3>ShoppingCart</h3>
       <li class="list-group-item">
         <div class="row">
-          <span class="col-2 offset-1">get</span>
+          <span class="col-2 offset-1">GET</span>
           <span class="col-5">'/api/shoppingcart/users/:uid'</span>
           <span class="col-4">Find shoppingCart for user.</span>
+        </div>
+      </li>
+      <h3>Menu</h3>
+      <li class="list-group-item">
+        <div class="row">
+          <span class="col-2 offset-1">GET</span>
+          <span class="col-5">'/api/menus/restaurants/:rid'</span>
+          <span class="col-4">Find menu for restaurant.</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <span class="col-2 offset-1">POST</span>
+          <span class="col-5">'/api/menus'</span>
+          <span class="col-4">Create menu.(restaurantId included.)</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <span class="col-2 offset-1">DELETE</span>
+          <span class="col-5">'/api/menus/:mid'</span>
+          <span class="col-4">Delete menu.</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <span class="col-2 offset-1">PUT</span>
+          <span class="col-5">'/api/menus/:mid'</span>
+          <span class="col-4">Add item.(item json object as req.body)</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <span class="col-2 offset-1">DELETE</span>
+          <span class="col-5">'/api/menus/:mid/items/:iid'</span>
+          <span class="col-4">Delete item.</span>
+        </div>
+      </li>
+      <h3>Item</h3>
+      <li class="list-group-item">
+        <div class="row">
+          <span class="col-2 offset-1">GET</span>
+          <span class="col-5">'/api/items/:iid'</span>
+          <span class="col-4">Find item by Id.</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <span class="col-2 offset-1">PUT</span>
+          <span class="col-5">'/api/items/:iid'</span>
+          <span class="col-4">Update item.</span>
         </div>
       </li>
     </ul>
