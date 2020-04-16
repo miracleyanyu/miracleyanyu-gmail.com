@@ -36,6 +36,7 @@ require('./controllers/order.controller.server')(app);
 require('./controllers/payment.controller.server')(app);
 require('./controllers/shoppingcart.controller.server')(app);
 require('./controllers/menu.controller.server')(app);
+require('./controllers/item.controller.server')(app);
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/' + 'api.server.html')
