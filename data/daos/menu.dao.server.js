@@ -2,6 +2,9 @@ const menuModel = require('../models/Menu/menu.model.server');
 
 const itemDao = require('../daos/item.dao.server');
 
+const findAllMenus = () =>
+    menuModel.find();
+
 const findMenuForRestaurant = (rid) =>
     menuModel.find({restaurantId: rid});
 
@@ -21,6 +24,7 @@ const deleteItem = (mid, iid) => {
 }
 
 module.exports = {
+  findAllMenus,
   findMenuForRestaurant,
   createMenu,
   deleteMenu,
