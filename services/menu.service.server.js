@@ -6,6 +6,9 @@ const findAllMenus = () =>
 const findMenuForRestaurant = (rid) =>
     menuDao.findMenuForRestaurant(rid);
 
+const findItemsForMenu = (rid) =>
+    menuDao.findItemsForMenu(rid);
+
 const createMenu = (menu) =>
     menuDao.createMenu(menu);
 
@@ -21,6 +24,7 @@ const deleteItem = (mid, iid) =>
 module.exports = {
   findAllMenus,
   findMenuForRestaurant,
+  findItemsForMenu,
   createMenu,
   deleteMenu,
   addItem,

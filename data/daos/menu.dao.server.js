@@ -8,6 +8,9 @@ const findAllMenus = () =>
 const findMenuForRestaurant = (rid) =>
     menuModel.find({restaurantId: rid});
 
+const findItemsForMenu = (rid) =>
+    menuModel.find({restaurantId: rid}).populate('items');
+
 const createMenu = (menu) =>
     menuModel.create(menu);
 
@@ -26,6 +29,7 @@ const deleteItem = (mid, iid) => {
 module.exports = {
   findAllMenus,
   findMenuForRestaurant,
+  findItemsForMenu,
   createMenu,
   deleteMenu,
   addItem,
