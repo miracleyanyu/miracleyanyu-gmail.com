@@ -6,7 +6,7 @@ const findAllMenus = () =>
     menuModel.find();
 
 const findMenuForRestaurant = (rid) =>
-    menuModel.find({restaurantId: rid});
+    menuModel.find({restaurantId: rid}).populate('items');
 
 const findItemsForMenu = (rid) =>
     menuModel.find({restaurantId: rid}).populate('items');
