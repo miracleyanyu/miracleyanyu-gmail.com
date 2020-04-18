@@ -20,14 +20,16 @@ app.use(bodyParser.json());
 require('./data/db');
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin",
-      "*");
-  res.header("Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods",
-      "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
+  var allowedOrigins = ['https://wbdv-team18-server.herokuapp.com/', 'http://localhost:4200', 'http://127.0.0.1:9000', 'http://localhost:9000', 'http://localhost:3000'];
+  var origin = req.headers.origin;
+  if(allowedOrigins.indexOf(origin) > -1){
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  //res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8020');
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', true);
+  return next();
 });
 
 require('./controllers/user.controller.server')(app);
