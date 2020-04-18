@@ -12,7 +12,7 @@ const findItemsForMenu = (rid) =>
     menuModel.find({restaurantId: rid}).populate('items');
 
 const createMenu = (menu) =>
-    menuModel.create(menu).populate("items");
+    menuModel.create(menu);
 
 const deleteMenu = (mid) =>
     menuModel.findByIdAndDelete({_id: mid});
