@@ -7,6 +7,9 @@ const findAllUsers = () =>
 const findUserById = (uid) =>
     UserModel.findById(uid);
 
+const findUserByUserName= (username) =>
+    UserModel.find({"username": username});
+
 const logIn = (userName, password) =>
     UserModel.findOne({"userName": userName, "password": password});
 
@@ -39,5 +42,6 @@ module.exports = {
   deleteUser,
   placeOrder,
   writeReview,
-  logIn
+  logIn,
+  findUserByUserName
 }

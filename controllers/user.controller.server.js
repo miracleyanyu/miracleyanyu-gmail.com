@@ -38,6 +38,10 @@ module.exports = (app) => {
     userService.findAllUsers()
       .then(users => res.json(users))
   });
+  app.get('/api/users/:username', (req, res) => {
+    userService.findUserByUserName(req.params['username'])
+    .then(users => res.json(users))
+  });
   app.get('/api/users/:uid', (req, res) => {
     userService.findUserById(req.params['uid'])
     .then(user => res.send((user)))
@@ -50,4 +54,5 @@ module.exports = (app) => {
     userService.deleteUser(req.params['uid'])
       .then(user => res.send("Successfully deleted."))
   })
+
 }
