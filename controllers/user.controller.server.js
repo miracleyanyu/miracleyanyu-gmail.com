@@ -49,7 +49,7 @@ module.exports = (app) => {
     userService.findAllUsers()
       .then(users => res.json(users))
   });
-  app.get('/api/users/:username', (req, res) => {
+  app.get('/api/users/username/:username', (req, res) => {
     userService.findUserByUserName(req.params['username'])
     .then(users => res.json(users))
   });
