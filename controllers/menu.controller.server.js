@@ -9,9 +9,9 @@ module.exports = (app) => {
     menuService.findMenuForRestaurant(req.params['rid'])
       .then(menu => res.send(menu))
   })
-  app.get('/api/menus/restaurants/:rid/items', (req, res) => {
-    menuService.findItemsForMenu(req.params['rid'])
-    .then(menu => res.send(menu.items))
+  app.get('/api/menus/:mid/items', (req, res) => {
+    menuService.findItemsForMenu(req.params['mid'])
+    .then(items => res.send(items))
   })
   app.post('/api/menus', (req, res) => {
     menuService.createMenu(req.body)

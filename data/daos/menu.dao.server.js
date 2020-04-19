@@ -8,8 +8,8 @@ const findAllMenus = () =>
 const findMenuForRestaurant = (rid) =>
     menuModel.find({restaurantId: rid}).populate('items');
 
-const findItemsForMenu = (rid) =>
-    menuModel.find({restaurantId: rid}).populate('items');
+const findItemsForMenu = (mid) =>
+    menuModel.find({_id: mid}, {"_id": 0, "restaurantId": 0, "__v": 0}).populate('items');
 
 const createMenu = (menu) =>
     menuModel.create(menu);
