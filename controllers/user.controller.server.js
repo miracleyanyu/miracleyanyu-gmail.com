@@ -39,7 +39,7 @@ module.exports = (app) => {
   app.post('/api/register', register);
   app.post('/api/profile', profile);
   app.post('/api/logout', logout);
-  app.post('/api/currentuser', currentuser);
+  app.get('/api/currentuser', currentuser);
 
   app.post('/api/users', (req, res) => {
     userService.createUser(req.body)
