@@ -6,10 +6,7 @@ const orderSchema = mongoose.Schema({
   restaurantId: String,
   userId: String,
   orderOn: String,
-  items: [{
-    type: mongoose.Schema.ObjectId,
-    ref: 'ItemModel'
-  }],
+  items: [],
   shippedOn: String,
   total: Number,
   orderStatus: {type: String, enum: ["PAID", "UNPAID", "SHIPPED", "DELIVERED", "CLOSED", "FINISHED"], default: 'UNPAID'}
