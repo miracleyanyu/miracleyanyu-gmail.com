@@ -19,7 +19,7 @@ const deleteMenu = (mid) =>
 
 const addItem = (mid, item) =>
     itemDao.createItem(item)
-      .then(item => menuModel.findByIdAndUpdate({_id: mid}, {$push: {items: item._id}}));
+      .then(item => menuModel.findByIdAndUpdate({_id: mid}, {$push: {items: item._id}}).populate("items"));
 
 const deleteItem = (mid, iid) => {
   itemDao.deleteItem(iid)
