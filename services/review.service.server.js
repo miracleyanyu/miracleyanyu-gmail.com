@@ -9,6 +9,9 @@ const findReviewById = (rid) =>
 const findReviewByUser = (uid) =>
     reviewDao.findReviewByUser(uid);
 
+const findReviewByUserName = (username) =>
+    reviewDao.findReviewByUserName(username);
+
 const findReviewByRestaurant = (rid) =>
     reviewDao.findReviewByRestaurant((rid));
 
@@ -32,5 +35,6 @@ module.exports = {
   deleteReview,
   findReviewByUser,
   findReviewByRestaurant,
-  createReviewSimpleURL
+  createReviewSimpleURL,
+  findReviewByUserName
 }

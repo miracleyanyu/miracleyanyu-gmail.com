@@ -8,7 +8,7 @@ const findUserById = (uid) =>
     UserModel.findById(uid);
 
 const findUserByUserName= (username) =>
-    UserModel.find({"username": username});
+    UserModel.find({"userName": username});
 
 const logIn = (userName, password) =>
     UserModel.findOne({"userName": userName, "password": password});

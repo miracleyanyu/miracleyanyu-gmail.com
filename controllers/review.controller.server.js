@@ -13,6 +13,10 @@ module.exports = (app) => {
     reviewService.findReviewByUser(req.params['uid'])
       .then(reviews => res.send(reviews))
   });
+  app.get('/api/profile/:username', (req, res) => {
+    reviewService.findReviewByUserName(req.params['username'])
+    .then(reviews => res.send(reviews))
+  });
   app.get('/api/reviews/restaurants/:rid', (req, res) => {
     reviewService.findReviewByRestaurant(req.params['rid'])
       .then(reviews => res.send(reviews))

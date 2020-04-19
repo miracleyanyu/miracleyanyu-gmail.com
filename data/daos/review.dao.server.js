@@ -1,4 +1,5 @@
 const reviewModel = require('../models/Review/review.model.server');
+const userModel = require('../models/User/user.model.server');
 
 const findAllReviews = () =>
     reviewModel.find();
@@ -8,6 +9,11 @@ const findReviewById = (rid) =>
 
 const findReviewByUser = (uid) =>
     reviewModel.find({"userId": uid});
+
+const findReviewByUserName = (username) => {
+  return userModel.findOne({"userName": username})
+    .then(user => reviewModel.find({"userId": user._id}));
+}
 
 const findReviewByRestaurant = (rid) =>
     reviewModel.find({"restaurantId": rid});
@@ -35,5 +41,6 @@ module.exports = {
   deleteReview,
   findReviewByUser,
   findReviewByRestaurant,
-  createReviewSimpleURL
+  createReviewSimpleURL,
+  findReviewByUserName
 }
