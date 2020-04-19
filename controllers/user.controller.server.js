@@ -31,12 +31,15 @@ module.exports = (app) => {
     res.sendStatus(200)
   }
 
+  const currentuser = (req, res) => {
+    res.send(req.session.user)
+  }
 
   app.post('/api/login', login);
   app.post('/api/register', register);
   app.post('/api/profile', profile);
   app.post('/api/logout', logout);
-
+  app.post('/api/currentuser', currentuser);
 
   app.post('/api/users', (req, res) => {
     userService.createUser(req.body)
