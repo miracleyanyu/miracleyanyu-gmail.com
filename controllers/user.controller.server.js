@@ -15,6 +15,7 @@ module.exports = (app) => {
       .then(user => {
         if (user != null) {
           req.session.user = user;
+          req.session.cookie.maxAge = 24 * 60 * 60 * 1000;
           this.user = req.session.user;
           return res.send(user);
         }
