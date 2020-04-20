@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 require('./data/db');
 
 app.use(function(req, res, next) {
-  var allowedOrigins = ['https://wbdv-team18-server.herokuapp.com/', 'http://localhost:4200', 'http://127.0.0.1:9000', 'http://localhost:9000', 'http://localhost:3000', 'http://localhost:3001'];
+  var allowedOrigins = ['https://cs5610-sp20-team18.herokuapp.com', 'http://localhost:4200', 'http://127.0.0.1:9000', 'http://localhost:9000', 'http://localhost:3000', 'http://localhost:3001'];
   var origin = req.headers.origin;
   if(allowedOrigins.indexOf(origin) > -1){
     res.header('Access-Control-Allow-Origin', origin);
