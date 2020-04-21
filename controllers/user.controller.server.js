@@ -60,7 +60,10 @@ module.exports = (app) => {
   });
   app.put('/api/users/:uid', (req, res) => {
     userService.updateUser(req.params['uid'], req.body)
-      .then(user => res.send(user))
+      .then(user => {
+        req.session.user = user;
+        res.send(user)
+      })
   });
   app.delete('/api/users/:uid', (req, res) => {
     userService.deleteUser(req.params['uid'])
